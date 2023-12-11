@@ -1,4 +1,3 @@
-//main.c
 #include "main.h"
 
 /**
@@ -8,7 +7,7 @@
  */
 int main(void)
 {
-	//Is descriptor associated with terminal
+	/*--Is descriptor associated with terminal--*/
 	if (isatty(STDIN_FILENO) == 1)
 	{
 		interactive_shell();
