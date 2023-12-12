@@ -10,7 +10,7 @@ char get_line(void)
 	char *line = NULL;
 	size_t buffersize = 0;
 
-	if (getline(&line, &buffersize, stdin) == -1) /*--if getting line content fails--*/
+	if (getline(&line, &buffersize, stdin) == -1) /*if getline fails*/
 	{
 		if (feof(stdin)) /*--tests eof--*/
 		{
