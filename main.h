@@ -9,5 +9,6 @@
 /*--main.c--*/
 void interactive_shell(void);
 void none_interactive_shell(void);
+char get_line(void);
 
 #endif
