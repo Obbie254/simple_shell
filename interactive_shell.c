@@ -13,7 +13,7 @@ void interactive_shell(void)
 	do {
 		printf("me@simple_shell$ "); /* printing the shell prompt */
 		line = get_line(); /* reads line from stdin */
-		arguments = split_line(line); /* breaks the input */
+		arguments = make_args(line); /* breaks the input */
 		free(arguments);
 		free(line);
 		if (current_status >= 0)
