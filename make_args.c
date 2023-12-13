@@ -17,7 +17,7 @@ char **make_args(char *string)
 		fprintf(stderr, "allocation error in make_args: parts\n");
 		exit(EXIT_FAILURE);
 	}
-	part = strtok(string, TOK_DELIM);
+	part = strtok(string, PARTS_DELIMITER);
 	for (i = 0; part != NULL; i++)
 	{
 		if (part[0] == '#')/*-for comments-*/
@@ -33,7 +33,7 @@ char **make_args(char *string)
 				exit(EXIT_FAILURE);
 			}
 		}
-		part = strtok(NULL, TOK_DELIM);
+		part = strtok(NULL, PARTS_DELIMITER);
 	}
 	parts[0] = NULL;
 	return (parts);

@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define PARTS_DELIMITER " \t\r\n\a\""
+
 /*----Libraries----*/
 #include <stdio.h>
 #include <unistd.h>
