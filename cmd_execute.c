@@ -9,7 +9,7 @@
  */
 int cmd_execute(char **arguments)
 {
-	char list_buildin_cmd[] = {
+	char *list_buildin_cmd[] = {
 		"cd",
 		"env",
 		"exit"

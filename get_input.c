@@ -7,22 +7,22 @@
  */
 char *get_line(void)
 {
-	char *line = NULL;
+	char *input = NULL;
 	size_t buffersize = 0;
 
-	if (getline(&line, &buffersize, stdin) == -1) /*if getline fails*/
+	if (getline(&input, &buffersize, stdin) == -1) /*if getline fails*/
 	{
 		if (feof(stdin)) /*--tests eof--*/
 		{
-			free(line);
+			free(input);
 			exit(EXIT_SUCCESS);
 		}
 		else
 		{
-			free(line);
+			free(input);
 			perror("Error on reading stdin");
 			exit(EXIT_FAILURE);
 		}
 	}
-	return (line);
+	return (input);
 }
