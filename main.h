@@ -22,5 +22,6 @@ int cmd_execute(char **);
 int _strcmp(char *, char *);
 int cmd_execute(char **);
 int new_program(char **);
+char *read_stdin(void);
 
 #endif
