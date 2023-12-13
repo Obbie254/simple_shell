@@ -5,7 +5,7 @@
  *
  * Return: pointer to a string with stdin content
  */
-char get_line(void)
+char *get_line(void)
 {
 	char *line = NULL;
 	size_t buffersize = 0;
@@ -21,7 +21,7 @@ char get_line(void)
 		{
 			free(line);
 			perror("Error on reading stdin");
-			exit{EXIT_FAILURE};
+			exit(EXIT_FAILURE);
 		}
 	}
 	return (line);
