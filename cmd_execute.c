@@ -19,7 +19,7 @@ int cmd_execute(char **arguments)
 		&own_env,
 		&own_exit
 	};
-	long unsigned int i = 0;
+	unsigned int i = 0;
 
 	if (arguments[0] == NULL)
 		return (-1);
