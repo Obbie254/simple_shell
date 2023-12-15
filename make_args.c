@@ -8,7 +8,8 @@
  */
 char **make_args(char *string)
 {
-	int i, buffersize = 64;
+	int i = 0;
+	int buffersize = 64;
 	char *part;
 	char **parts = malloc(buffersize * sizeof(char *));
 
@@ -18,7 +19,7 @@ char **make_args(char *string)
 		exit(EXIT_FAILURE);
 	}
 	part = strtok(string, PARTS_DELIMITER);
-	for (i = 0; part != NULL; i++)
+	for (; part != NULL; i++)
 	{
 		if (part[0] == '#')/*-for comments-*/
 			break;
@@ -35,6 +36,6 @@ char **make_args(char *string)
 		}
 		part = strtok(NULL, PARTS_DELIMITER);
 	}
-	parts[0] = NULL;
+	parts[i] = NULL;
 	return (parts);
 }

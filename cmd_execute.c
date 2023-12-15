@@ -2,7 +2,7 @@
 
 /**
  * cmd_execute - fxn checks if cmd (first arg)entered matches
- * builtin cmd
+ * builtin cmd if not starts a new process
  * @arguments: parts from make_agrs (cmd and flags)
  *
  * Return: 1 0n success, 0 on fail.

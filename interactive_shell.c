@@ -14,6 +14,7 @@ void interactive_shell(void)
 		printf("me@simple_shell$ "); /* printing the shell prompt */
 		line = get_line(); /* reads line from stdin */
 		arguments = make_args(line); /* breaks the input */
+		current_status = cmd_execute(arguments);
 		free(arguments);
 		free(line);
 		if (current_status >= 0)
