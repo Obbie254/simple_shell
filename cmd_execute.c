@@ -10,20 +10,20 @@
 int cmd_execute(char **arguments)
 {
 	char *list_buildin_cmd[] = {
-		"cd",
+		/*"cd",*/
 		"env",
 		"exit"
 	};
 	int (*buildin_fxn[])(char **) = {
-		&own_cd,
+		/*&own_cd,*/
 		&own_env,
 		&own_exit
 	};
-	int i;
+	long unsigned int i = 0;
 
 	if (arguments[0] == NULL)
 		return (-1);
-	for (i = 0; i < sizeof(list_buildin_cmd) / sizeof(char *); i++)
+	for (; i < sizeof(list_buildin_cmd) / sizeof(char *); i++)
 	{
 		if (_strcmp(arguments[0], list_buildin_cmd[i]) == 0)
 			return ((*buildin_fxn[i])(arguments));

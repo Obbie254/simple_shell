@@ -10,7 +10,7 @@ extern char **environ;
 #include <string.h>
 #include <unistd.h>
 
-int own_cd(char **arguments);
+/*int own_cd(char **arguments);*/
 int own_env(char **arguments);
 int own_exit(char **arguments);
 
@@ -23,5 +23,7 @@ int _strcmp(char *, char *);
 int cmd_execute(char **);
 int new_program(char **);
 char *read_stdin(void);
+void _puts(char *str);
+int _putchar(char c);
 
 #endif
