@@ -22,9 +22,10 @@ void _puts(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
+		if (str[i] == '\n')
+			_putchar('\n');
 		_putchar(str[i]);
 	}
-	_putchar('\n');
 }
 /**
  * own_env - prints the env of agrs
