@@ -7,11 +7,12 @@
  */
 void interactive_shell(void)
 {
-	char *line, **arguments;
+	char *line, *prompt, **arguments;
 	int current_status = -1;
 
 	do {
-		printf("me@simple_shell$ "); /* printing the shell prompt */
+		prompt = "me@simple_shell~$ ";
+		_puts(prompt); /* printing the shell prompt */
 		line = get_line(); /* reads line from stdin */
 		arguments = make_args(line); /* breaks the input */
 		current_status = cmd_execute(arguments);
