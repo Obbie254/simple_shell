@@ -99,3 +99,28 @@ void print_env(char **env)
 		puts(str);
 	}
 }
+
+/**
+ * fork_fxn - fxn does create a child process to execute the cmd
+ * @args: cmd and flags
+ * @buff: first arg of main
+ *
+ * Return: 1 on success
+ */
+int fork_fxn(char **args, char *buff)
+{
+	if (fork() == 0)
+	{
+		execve(args[0], args, NULL);
+		_puts("Error in child p: No such file or directory");
+		_putchar('\n');
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		wait(NULL);
+		free(buff);
+		buff = NULL;
+	}
+	return (0);
+}

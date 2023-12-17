@@ -1,14 +1,21 @@
 #include "main.h"
 
-int main(int argc, char **argv, char **env)
+/**
+ * main - main fxn of unix shell interpreter
+ * @cmdc: args count
+ * @cmd: args - cmd and flags
+ * @env: the environment var
+ * 
+ * Return: 1 on success
+ */
+int main(int cmdc, char **cmd, char **env)
 {
-	char *buf = NULL, *str, *cmd[20];
-	size_t buflen = 0;
+	char *buf = NULL;/*, *cmd[20];*/
 
 	do {
-		_puts(":) ");
+		_puts("#cisfun$ ");
 		buf = get_line();
-		if (buf[0] == '\0' || _strcmp(buf, "\n") == 0)
+		if (cmdc == 0 || _strcmp(buf, "\n") == 0)/*buf[0]=='\0'*/
 		{
 			free(buf);
 			buf = NULL;
@@ -29,21 +36,7 @@ int main(int argc, char **argv, char **env)
 		}
 		make_args(buf, cmd);
 		_path(cmd);
-		if (fork() == 0)
-		{
-			str = argv[0];
-			execve(cmd[0], cmd, env);
-			_puts(str);
-			_puts("No such file or directory");
-			_putchar('\n');
-			exit(EXIT_SUCCESS);
-		}
-		else
-		{
-			wait(NULL);
-			free(buf);
-			buf = NULL;
-		}
+		fork_fxn(cmd, buf);
 	} while (1);
 	exit(EXIT_SUCCESS);
 }

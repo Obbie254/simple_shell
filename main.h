@@ -13,10 +13,12 @@ char *get_line(void);
 void make_args(char *, char **);
 int _path(char **cmd);
 void print_env(char **);
+int fork_fxn(char **, char *);
 
 void _puts(char *);
 void _strcat(char *, char *);
 int _strcmp(char *, char *);
 int _putchar(char);
+/*void cpy_array(char **, char **);*/
 
 #endif
