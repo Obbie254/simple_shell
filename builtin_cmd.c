@@ -38,9 +38,9 @@ int own_env(char **arguments)
 	int i = 0;
 	char *str;
 
-	str = arguments[i++];
 	while (arguments[i])
 	{
+		str = arguments[i++];
 		_puts(str);
 		return (0);
 	}
