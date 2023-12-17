@@ -1,29 +1,22 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define PARTS_DELIMITER " \t\r\n\a\""
-extern char **environ;
-
 #include <stdio.h>
-#include <sys/wait.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <string.h>
 
-/*int own_cd(char **arguments);*/
-int own_env(char **arguments);
-int own_exit(char **arguments);
-
-void interactive_shell(void);
-void none_interactive_shell(void);
 char *get_line(void);
-char **make_args(char *);
-int cmd_execute(char **);
+void make_args(char *, char **);
+int _path(char **cmd);
+void print_env(char **);
+
+void _puts(char *);
+void _strcat(char *, char *);
 int _strcmp(char *, char *);
-int cmd_execute(char **);
-int new_program(char **);
-char *read_stdin(void);
-void _puts(char *str);
-int _putchar(char c);
+int _putchar(char);
 
 #endif
