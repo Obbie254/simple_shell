@@ -61,11 +61,11 @@ int _path(char **args)
 	unsigned int i = 0;
 	struct stat st;
 
-	PATH [0] = "/usr/local/bin/ls";
-	PATH [1] = "/bin/";
-	PATH [2] = "/sbin";
-	PATH [3] = "/usr/bin/";
-	PATH [4] = "NULL";
+	PATH[0] = "/usr/local/bin/ls";
+	PATH[1] = "/bin/";
+	PATH[2] = "/sbin";
+	PATH[3] = "/usr/bin/";
+	PATH[4] = "NULL";
 	while (PATH[i])
 	{
 		char string[120] = "";
