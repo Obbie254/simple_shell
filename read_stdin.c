@@ -12,7 +12,7 @@ char *read_stdin(void)
 
 	if (input == NULL)
 	{
-		fprintf(stderr, "memory allocation error; read_stdin");
+		_puts("memory allocation error; read_stdin");
 		exit(EXIT_FAILURE);
 	}
 	while (1)
@@ -37,7 +37,7 @@ char *read_stdin(void)
 			input = realloc(input, buffersize);
 			if (input == NULL)
 			{
-				fprintf(stderr, "memory reallocation error");
+				_puts("memory reallocation error");
 				exit(EXIT_FAILURE);
 			}
 		}

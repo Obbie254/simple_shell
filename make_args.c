@@ -15,7 +15,7 @@ char **make_args(char *string)
 
 	if (!parts)
 	{
-		fprintf(stderr, "allocation error in make_args: parts\n");
+		_puts("allocation error in make_args: parts\n");
 		exit(EXIT_FAILURE);
 	}
 	part = strtok(string, PARTS_DELIMITER);
@@ -30,7 +30,7 @@ char **make_args(char *string)
 			parts = realloc(parts, buffersize * sizeof(char *));
 			if (!parts)
 			{
-				fprintf(stderr, "reallocation error in make_args: parts\n");
+				_puts("reallocation error in make_args: parts\n");
 				exit(EXIT_FAILURE);
 			}
 		}
